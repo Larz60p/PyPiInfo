@@ -90,15 +90,15 @@ After that, the wrappers available are:
     Retrieve a list of download URLs for the given package release. Returns a list of dicts with
     the following keys
     
-        :honey_pot: url
-        :honey_pot: packagetype ('sdist', 'bdist', etc)
-        :honey_pot: filename
-        :honey_pot: size
-        :honey_pot: md5_digest
-        :honey_pot: downloads
-        :honey_pot: has_sig
-        :honey_pot: python_version (required version, or 'source', or 'any')
-        :honey_pot: comment_text 
+        url
+        packagetype ('sdist', 'bdist', etc)
+        filename
+        size
+        md5_digest
+        downloads
+        has_sig
+        python_version (required version, or 'source', or 'any')
+        comment_text 
 
 ```
     # =========================================
@@ -119,30 +119,30 @@ After that, the wrappers available are:
 
     Retrieve metadata describing a specific package release. Returns a dict with keys for
     
-    :honey_pot: name
-    :honey_pot: version
-    :honey_pot: stable_version
-    :honey_pot: author
-    :honey_pot: author_email
-    :honey_pot: maintainer
-    :honey_pot: maintainer_email
-    :honey_pot: home_page
-    :honey_pot: license
-    :honey_pot: summary
-    :honey_pot: description
-    :honey_pot: keywords
-    :honey_pot: platform
-    :honey_pot: download_url
-    :honey_pot: classifiers (list of classifier strings)
-    :honey_pot: requires
-    :honey_pot: requires_dist
-    :honey_pot: provides
-    :honey_pot: requires_external
-    :honey_pot: requires_python
-    :honey_pot: obsoletes
-    :honey_pot: obsoletes_dist
-    :honey_pot: project_url
-    :honey_pot: docs_url (URL of the packages.python.org docs if they've been supplied)
+        name
+        version
+        stable_version
+        author
+        author_email
+        maintainer
+        maintainer_email
+        home_page
+        license
+        summary
+        description
+        keywords
+        platform
+        download_url
+        classifiers (list of classifier strings)
+        requires
+        requires_dist
+        provides
+        requires_external
+        requires_python
+        obsoletes
+        obsoletes_dist
+        project_url
+        docs_url (URL of the packages.python.org docs if they've been supplied)
 
 ```
     # =========================================
@@ -167,19 +167,19 @@ After that, the wrappers available are:
     with an OR), for example: {'name': ['foo', 'bar']}. Valid keys for the spec dict are listed here.
     Invalid keys are ignored
     
-    :honey_pot: name
-    :honey_pot: version
-    :honey_pot: author
-    :honey_pot: author_email
-    :honey_pot: maintainer
-    :honey_pot: maintainer_email
-    :honey_pot: home_page
-    :honey_pot: license
-    :honey_pot: summary
-    :honey_pot: description
-    :honey_pot: keywords
-    :honey_pot: platform
-    :honey_pot: download_url
+        name
+        version
+        author
+        author_email
+        maintainer
+        maintainer_email
+        home_page
+        license
+        summary
+        description
+        keywords
+        platform
+        download_url
     
     Arguments for different fields are combined using either "and" (the default) or "or". 
     Example: search({'name': 'foo', 'description': 'bar'}, 'or'). The results are returned as a list of
