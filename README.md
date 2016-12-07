@@ -29,7 +29,8 @@ After that, the wrappers available are:
 
 **get_releases(self, package_name, hidden=False)**
 
-    Retrieve a list of the releases registered for the given package_name. Returns a list with all version strings if ```
+    Retrieve a list of the releases registered for the given package_name. Returns a list with all version
+    strings if
 
 ```
     # =========================================
@@ -44,7 +45,8 @@ After that, the wrappers available are:
     
 **get_package_roles(self, package_name)**
 
-    Retrieve a list of users and their attributes roles for a given package_name. Role is either 'Maintainer' or 'Owner'. 
+    Retrieve a list of users and their attributes roles for a given package_name. Role is either 'Maintainer'
+    or 'Owner'. 
 
 ```
     # =========================================
@@ -85,7 +87,8 @@ After that, the wrappers available are:
 
 **get_release_urls(self, package_name, version)**
 
-    Retrieve a list of download URLs for the given package release. Returns a list of dicts with the following keys
+    Retrieve a list of download URLs for the given package release. Returns a list of dicts with
+    the following keys
     
         :honey_pot: url
         :honey_pot: packagetype ('sdist', 'bdist', etc)
@@ -158,7 +161,11 @@ After that, the wrappers available are:
 
     Search the package database using the indicated search spec.
     
-    The spec may include any of the keywords described in the above list (except 'stable_version' and 'classifiers'), for example: {'description': 'spam'} will search description fields. Within the spec, a field's value can be a string or a list of strings (the values within the list are combined with an OR), for example: {'name': ['foo', 'bar']}. Valid keys for the spec dict are listed here. Invalid keys are ignored
+    The spec may include any of the keywords described in the above list (except 'stable_version' and
+    'classifiers'), for example: {'description': 'spam'} will search description fields. Within the
+    spec, a field's value can be a string or a list of strings (the values within the list are combined
+    with an OR), for example: {'name': ['foo', 'bar']}. Valid keys for the spec dict are listed here.
+    Invalid keys are ignored
     
     :honey_pot: name
     :honey_pot: version
@@ -174,7 +181,9 @@ After that, the wrappers available are:
     :honey_pot: platform
     :honey_pot: download_url
     
-    Arguments for different fields are combined using either "and" (the default) or "or". Example: search({'name': 'foo', 'description': 'bar'}, 'or'). The results are returned as a list of dicts {'name': package name, 'version': package release version, 'summary': package release summary} 
+    Arguments for different fields are combined using either "and" (the default) or "or". 
+    Example: search({'name': 'foo', 'description': 'bar'}, 'or'). The results are returned as a list of
+    dicts {'name': package name, 'version': package release version, 'summary': package release summary} 
 
 ```
     # =========================================
@@ -192,7 +201,8 @@ After that, the wrappers available are:
 
 **get_browse(self, classifiers)**
 
-    Retrieve a list of (name, version) pairs of all releases classified with all of the given classifiers. 'classifiers' must be a list of Trove classifier strings. 
+    Retrieve a list of (name, version) pairs of all releases classified with all of the given classifiers.
+    'classifiers' must be a list of Trove classifier strings. 
 
 ```
     # =========================================
@@ -212,7 +222,9 @@ After that, the wrappers available are:
 
 **get_changelog(self, since, with_ids=False)**
 
-    Retrieve a list of four-tuples (name, version, timestamp, action), or five-tuple including the serial id if ids are requested, since the given timestamp. All timestamps are UTC values. The argument is a UTC integer seconds since the epoch.
+    Retrieve a list of four-tuples (name, version, timestamp, action), or five-tuple including the
+    serial id if ids are requested, since the given timestamp. All timestamps are UTC values. The
+    argument is a UTC integer seconds since the epoch.
     
 ```
     # =========================================
@@ -244,7 +256,9 @@ After that, the wrappers available are:
 
 **get_changelog_since_serial(self, since_serial)**
 
-    Retrieve a list of five-tuples (name, version, timestamp, action, serial) since the event identified by the given serial. All timestamps are UTC values. The argument is a UTC integer seconds since the epoch.
+    Retrieve a list of five-tuples (name, version, timestamp, action, serial) since the event
+    identified by the given serial. All timestamps are UTC values. The argument is a UTC integer
+    seconds since the epoch.
     
 ```
     # =========================================
