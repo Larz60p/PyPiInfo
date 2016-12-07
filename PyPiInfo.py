@@ -175,17 +175,19 @@ class PyPiInfo:
 
 if __name__ == '__main__':
     ppi = PyPiInfo()
+
     # =========================================
-    # Example usage
+    # Get list of all packages
     # =========================================
-    #  won't print out package list, it contains over 90,000
-    #  entries - Use it in a GUI treeview to select other information
-    #  Will use package PyRedstone as default package
+    #  Don't print out package list, it will contain over 90,000
+    #  entries - Use it in a GUI treeview or similar to select
+    #  other information
     package_list = ppi.get_package_list()
     package_name = 'PyRedstone'
     #
     # =========================================
     # Get list containing all release versions
+    # =========================================
     print('\n=========================================')
     releases = ppi.get_releases(package_name)
     print('releases: {}'.format(releases))
@@ -193,6 +195,7 @@ if __name__ == '__main__':
 
     # =========================================
     # list of users and their attributes roles for package
+    # =========================================
     print('\n=========================================')
     package_roles = ppi.get_package_roles(package_name)
     print('package roles: {}'.format(package_roles))
@@ -200,18 +203,21 @@ if __name__ == '__main__':
 
     # =========================================
     # list of [role_name, package_name] for a given username
+    # =========================================
     print('\n=========================================')
     print('user packages: {}'.format(ppi.get_user_packages(package_roles[0][1])))
     time.sleep(.2)
 
     # =========================================
     # list of lists: each list contains filename and download count for each file
+    # =========================================
     print('\n=========================================')
     print('release downloads: {}'.format(ppi.get_release_downloads(package_name, releases[0])))
     time.sleep(.2)
 
     # =========================================
     # list of dicts of download URLs for the given package release
+    # =========================================
     print('\n=========================================')
     release_urls = ppi.get_release_urls(package_name, releases[0])
     for n, urldict in enumerate(release_urls):
@@ -224,6 +230,7 @@ if __name__ == '__main__':
 
     # =========================================
     # a dict of metadata describing a specific package release
+    # =========================================
     print('\n=========================================')
     release_data = ppi.get_release_data(package_name, releases[0])
     print("Package: {} - Version: {} - Release Data".format(package_name, releases[n]))
@@ -234,6 +241,7 @@ if __name__ == '__main__':
 
     # =========================================
     # Search the package database using the indicated search spec
+    # =========================================
     print('\n=========================================')
     search_packages = ppi.get_search({'name': package_name, 'version': releases[0]})
     for n, search_dict in enumerate(search_packages):
@@ -246,6 +254,7 @@ if __name__ == '__main__':
     # =========================================
     # Retrieve a list of (package_name, version) pairs of all releases classified with all of
     # the given classifiers. 'classifiers' must be a list of Trove classifier strings
+    # =========================================
     print('\n=========================================')
     browse_packages = ppi.get_browse([
         # "Topic :: Software Development",
@@ -259,6 +268,7 @@ if __name__ == '__main__':
     # =========================================
     # Retrieve a list of four-tuples (name, version, timestamp, action), or five-tuple
     # including the serial id if ids are requested, since the given timestamp. time=UTC
+    # =========================================
     print('\n=========================================')
     timestamp = 1480523283
     changes = ppi.get_changelog(timestamp, True)
@@ -269,6 +279,7 @@ if __name__ == '__main__':
 
     # =========================================
     # Retrieve the last event's serial id.
+    # =========================================
     print('\n=========================================')
     serialid = ppi.get_changelog_last_serial()
     print('changelog: serial id: {}'.format(serialid))
@@ -277,6 +288,7 @@ if __name__ == '__main__':
     # =========================================
     # Retrieve a list of five-tuples (name, version, timestamp, action, serial) since
     # the event identified by the given serial. time=UTC
+    # =========================================
     print('\n=========================================')
     print('Changelog since serial: {}'.format(serialid - 10))
     changes = ppi.get_changelog_since_serial(serialid - 10)
